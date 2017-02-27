@@ -30,7 +30,7 @@ let fetchBugs = () => {
 
   listBugsElement.innerHTML = ''
 
-  for(let i = 0; i < bugs.length; i++) {
+  for (let i = 0; i < bugs.length; i++) {
     let id = bugs[i].id
     let desc = bugs[i].description
     let severity = bugs[i].severity
@@ -72,10 +72,13 @@ const setStatusClosed = (id) => {
 
   localStorage.setItem('bugs', JSON.stringify(updatedBugs))
   fetchBugs()
-
 }
 
-const deleteBug = (id) => {
+function deleteBug (id) {
+  console.log('hapuzz')
+}
+
+const deleteBugOld = (id) => {
   let bugs = JSON.parse(localStorage.getItem('bugs'))
 
   let remainingBugs = bugs.filter((item) => {
